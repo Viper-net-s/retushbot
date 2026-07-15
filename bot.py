@@ -1,9 +1,9 @@
 import telebot
 from telebot import types
 import time
+import sys
 
-# ТВІЙ ТОКЕН (отримай новий у BotFather, якщо цей не працює)
-TOKEN = "8891115599:AAE6yAl9GYrJCGhohYg8nsWcnFcuD4pcreE"
+TOKEN = "8891115599:AAE6yA19GYrJcGhoHyG8nsKcnFcuD4pcreE"
 ADMIN_ID = 1627756188
 
 bot = telebot.TeleBot(TOKEN)
@@ -35,11 +35,4 @@ def price(message):
     )
 
 print("✅ Бот запущено!")
-
-# Запуск з обробкою помилок
-while True:
-    try:
-        bot.infinity_polling(timeout=10, long_polling_timeout=5)
-    except Exception as e:
-        print(f"Помилка: {e}")
-        time.sleep(5)
+bot.infinity_polling()
